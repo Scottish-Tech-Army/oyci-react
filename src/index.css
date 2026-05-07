@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&display=swap');
+
+:root {
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100%;
+}
+
+body {
+  /* background: */
+    /* radial-gradient(circle at 9% 20%, rgba(16, 182, 234, 0.22), transparent 34%),
+    radial-gradient(circle at 96% 18%, rgba(230, 0, 141, 0.17), transparent 32%),
+    radial-gradient(circle at 75% 86%, rgba(92, 27, 119, 0.14), transparent 36%),
+    #f5f6fa; */
+}
