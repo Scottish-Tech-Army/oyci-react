@@ -1,0 +1,41 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  /* Enforce font across ALL elements including inputs, buttons, selects */
+  font-family: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-x: hidden;
+  /* Base accessible font size — never below 16px */
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+#root {
+  height: 100%;
+}
+
+/* Ensure interactive elements always inherit the font */
+button, input, select, textarea, optgroup, option {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+/* Accessible focus ring for keyboard navigation */
+:focus-visible {
+  outline: 3px solid #0aa6b4;
+  outline-offset: 2px;
+  border-radius: 3px;
+}
+
+/* Remove default focus ring only when using mouse */
+:focus:not(:focus-visible) {
+  outline: none;
+}

@@ -1,0 +1,332 @@
+/* =====================
+   CONTAINER
+===================== */
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+  height: 64px;
+  background: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  transition: box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.navScrolled {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.14);
+}
+
+/* =====================
+   LOGO
+===================== */
+.navBrand {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.navLogo {
+  height: 52px;
+  width: auto;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.navLogo:hover {
+  opacity: 0.85;
+  transform: scale(1.05);
+}
+
+
+
+/* =====================
+   PAGE TITLE
+===================== */
+.navTitle {
+  display: flex;
+  align-items: left;
+  gap: 10px;
+  font-size: 22px;
+  font-weight: 800;
+  white-space: nowrap;
+  color: var(--text, #111827);
+  letter-spacing: -0.3px;
+  user-select: none;
+  animation: titleFadeIn 0.6s ease both;
+}
+
+.navTitleIcon {
+  font-size: 24px;
+  line-height: 1;
+  animation: titleIconBounce 0.7s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  display: flex;
+  align-items: center;
+}
+
+.navTitleText {
+  background: linear-gradient(90deg, #2563eb 0%, #0ea5e9 60%, #6366f1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  transition: opacity 0.2s ease;
+}
+
+.navTitleText:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+/* Fade in on load */
+@keyframes titleFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Icon bounce on load */
+@keyframes titleIconBounce {
+  0%   { transform: scale(0.5) rotate(-10deg); opacity: 0; }
+  60%  { transform: scale(1.2) rotate(4deg);  opacity: 1; }
+  100% { transform: scale(1)   rotate(0deg);  opacity: 1; }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .navTitle {
+    font-size: 16px;
+    gap: 6px;
+  }
+
+  .navTitleIcon {
+    font-size: 18px;
+  }
+
+  .navTitleText {
+    font-size: 16px;
+  }
+}
+
+
+/* =====================
+   LINKS
+===================== */
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.navLink {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.navLink:hover {
+  color: #0066cc;
+}
+
+.navLink::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #0066cc;
+  transition: width 0.3s ease;
+}
+
+.navLink.active::after,
+.navLink:hover::after {
+  width: 100%;
+}
+
+.navLink.active {
+  color: #0066cc;
+}
+
+/* =====================
+   USER SECTION
+===================== */
+.navUserSection {
+  position: relative;
+}
+
+.navUserBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.navAvatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #2563eb;
+  color: #ffffff;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.navAvatar:hover,
+.avatarActive {
+  transform: scale(1.1);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.3);
+}
+
+/* =====================
+   DROPDOWN
+===================== */
+.navDropdown {
+  position: absolute;
+  right: 0;
+  top: 120%;
+  background: #ffffff;
+  border-radius: 8px;
+  min-width: 180px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
+  opacity: 0;
+  transform: translateY(-8px);
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  padding: 0;
+  overflow: hidden;
+}
+
+.navDropdown.open {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.navUserLabel,
+.navUserNameRole {
+  padding: 0.75rem 1rem;
+  font-weight: 600;
+  border-bottom: 1px solid #e5e7eb;
+  color: #111827;
+}
+
+.navDropdown button {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.navDropdown button:hover {
+  background: #f3f4f6;
+}
+
+.navDropdown .danger {
+  color: #b91c1c;
+}
+
+.navDropdown .danger:hover {
+  background: #fef2f2;
+}
+
+/* =====================
+   HAMBURGER
+===================== */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.hamburger span {
+  width: 22px;
+  height: 2px;
+  background: #111827;
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.hamburger.open span:nth-child(1) {
+  transform: rotate(45deg) translateY(6px) translateX(1px);
+}
+
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.hamburger.open span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-6px) translateX(1px);
+}
+
+/* =====================
+   MOBILE
+===================== */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .navTitle {
+    font-size: 15px;
+  }
+
+  .navLinks {
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    background: #ffffff;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    padding: 0.5rem 0;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+    transform: translateY(-10px);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  .navLinks.open {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .navLink {
+    width: 100%;
+    padding: 0.75rem 1.5rem;
+  }
+
+  .navUserSection {
+    width: 100%;
+    padding: 0.75rem 1.5rem;
+  }
+}

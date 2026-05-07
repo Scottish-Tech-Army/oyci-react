@@ -1,0 +1,476 @@
+
+
+/* =========================================================
+   DESIGN TOKENS / THEME
+   ========================================================= */
+   :root {
+    --teal:#0aa6b4;
+    --pink:#d93b6f;
+    --yellow:#f3c742;
+    --blue:#2563eb;
+    --bg:#f7f9fb;
+    --text:#0b1b2b;
+    --muted:#6b7a90;
+    --card:#ffffff;
+    --border:#e6ecf2;
+    --shadow:0 6px 24px rgba(14,30,37,.08);
+
+    --focus-ring:#0aa6b4;
+    --error:#b91c1c;
+    --success:#047857;
+
+    /* Single font stack — Inter first, system fallbacks */
+    --font: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    font-family: var(--font);
+
+    /* Type scale tokens */
+    --text-xs:   12px;
+    --text-sm:   13px;
+    --text-base: 16px;
+    --text-lg:   18px;
+    --text-xl:   22px;
+    --text-2xl:  26px;
+  }
+  
+  /* =========================================================
+     BASE / RESET
+     ========================================================= */
+  body {
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family: var(--font);
+    font-size: var(--text-base);
+    line-height:1.5;
+  }
+  
+  a { color:inherit; text-decoration:none; }
+  
+  /* =========================================================
+     APP LAYOUT
+     ========================================================= */
+  .appShell {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .appMain {
+    padding:24px;
+    max-width:1200px;
+    width:100%;
+    margin:0 auto;
+    box-sizing:border-box;
+  }
+  
+  /* =========================================================
+     PAGE / HEADERS
+     ========================================================= */
+  .pageHeader {
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    margin-bottom:16px;
+  }
+  
+  .page h1 {
+    margin:0;
+    font-size:26px;
+  }
+  
+  /* =========================================================
+     GRID SYSTEM
+     ========================================================= */
+  .grid2 {
+    display:grid;
+    grid-template-columns:repeat(2, minmax(0,1fr));
+    gap: 12px 16px; 
+  }
+  
+  .grid3 {
+    display:grid;
+    grid-template-columns:repeat(3, minmax(0,1fr));
+    gap:20px;
+  }
+  
+  
+  
+  
+  /* =========================================================
+     EVENT LIST ITEMS
+     ========================================================= */
+  .eventItem {
+    display:flex;
+    align-items:center;
+    gap:14px;
+    padding:12px;
+    border:1px solid var(--border);
+    border-radius:14px;
+    margin-bottom:10px;
+    background:#fff;
+    cursor:pointer;
+  }
+  
+  .eventItem:hover,
+  .eventItem:focus-visible {
+    border-color:var(--teal);
+  }
+  
+  .eventIcon {
+    width:44px;
+    height:44px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:20px;
+    flex-shrink:0;
+  }
+  
+  .eventIcon.pink   { background:var(--pink); color:#fff; }
+  .eventIcon.teal   { background:var(--teal); color:#fff; }
+  .eventIcon.yellow { background:var(--yellow); color:#fff; }
+  
+  .eventName {
+    font-weight:800;
+    font-size:15px;
+  }
+  
+  .eventMeta {
+    font-size:13px;
+    color:var(--muted);
+    margin-top:2px;
+  }
+  
+  /* =========================================================
+     BUTTONS
+     ========================================================= */
+  .btn {
+    border:0;
+    border-radius:12px;
+    padding:10px 18px;
+    font-weight:700;
+    cursor:pointer;
+    font-size:14px;
+  }
+  
+  .btnPrimary {
+    background:var(--blue);
+    color:#fff;
+  }
+  
+  .btnPrimary:hover,
+  .btnPrimary:focus-visible {
+    background:#1d4ed8;
+  }
+  
+  .btnSecondary {
+    background:rgba(10,166,180,.12);
+    color:var(--text);
+  }
+  
+  .btnOutline {
+    background:#fff;
+    border:1px solid var(--border);
+    color:var(--text);
+  }
+  
+  .btnOutline:hover {
+    border-color:var(--blue);
+    color:var(--blue);
+  }
+  
+  .btnFull {
+    width:100%;
+    display:block;
+    text-align:center;
+    padding:14px;
+    border-radius:14px;
+    font-size:16px;
+  }
+  
+  .btnDanger {
+    background:var(--danger,#e53e3e);
+    color:#fff;
+  }
+  
+  .btnDanger:hover {
+    background:#c53030;
+  }
+  
+  /* =========================================================
+     FORMS
+     ========================================================= */
+  .field {
+    display:flex;
+    flex-direction:column;
+    gap:6px;
+    margin-bottom:12px;
+  }
+  
+  .field span {
+    font-size:13px;
+    color:var(--muted);
+    font-weight:600;
+  }
+  
+  input,
+  select {
+    padding:10px 12px;
+    border-radius:12px;
+    border:1px solid var(--border);
+    background:#fff;
+    font-size:14px;
+    width:100%;
+    box-sizing:border-box;
+  }
+  
+  input:focus,
+  select:focus {
+    outline:none;
+    border-color:var(--teal);
+  }
+  
+  .inputError {
+    border-color:var(--error);
+  }
+  
+  /* =========================================================
+     STAFF / ASSIGN ROWS
+     ========================================================= */
+  .staffRow,
+  .assignRow {
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:8px;
+    padding:10px 12px;
+    border:1px solid var(--border);
+    border-radius:12px;
+    background:#fff;
+    margin-bottom:8px;
+    box-sizing:border-box;
+  }
+  
+  .staffName,
+  .assignName {
+    font-weight:800;
+  }
+  
+  .staffRole,
+  .assignHours {
+    font-size:13px;
+    color:var(--muted);
+  }
+  
+  /* =========================================================
+     CHIPS
+     ========================================================= */
+  .chip {
+    font-size:12px;
+    padding:6px 10px;
+    border-radius:999px;
+    border:1px solid var(--border);
+    font-weight:700;
+  }
+  
+  .chipSuccess { background:rgba(16,185,129,.14); color:#059669; }
+  .chipWarn    { background:rgba(245,158,11,.16); color:#d97706; }
+  .chipNeutral { background:rgba(148,163,184,.18); color:var(--muted); }
+  .chipBlue    { background:rgba(37,99,235,.14); color:var(--blue); }
+  
+  .chipsRow {
+    display:flex;
+    gap:8px;
+    margin-top:8px;
+    flex-wrap:wrap;
+  }
+  
+  /* =========================================================
+     ACCESSIBILITY
+     ========================================================= */
+  .srOnly {
+    position:absolute;
+    width:1px;
+    height:1px;
+    padding:0;
+    margin:-1px;
+    overflow:hidden;
+    clip:rect(0,0,0,0);
+    white-space:nowrap;
+    border:0;
+  }
+  
+  *:focus-visible {
+    outline:3px solid var(--focus-ring);
+    outline-offset:3px;
+    border-radius:6px;
+  }
+  
+  button,
+  a,
+  input,
+  select {
+    touch-action:manipulation;
+  }
+  
+  /* =========================================================
+     LOGIN
+     ========================================================= */
+  .loginWrap {
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:24px;
+  }
+  
+  .loginCard {
+    width:420px;
+    max-width:100%;
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:20px;
+    padding:32px;
+    box-shadow:var(--shadow);
+  }
+  
+  .loginBrand {
+    display:flex;
+    gap:12px;
+    align-items:center;
+    margin-bottom:10px;
+  }
+  
+  .loginTitle {
+    margin:10px 0 14px;
+    font-size:22px;
+    font-weight:900;
+  }
+  
+  .linkBtn {
+    background:none;
+    border:none;
+    color:var(--teal);
+    font-weight:700;
+    cursor:pointer;
+    margin-top:8px;
+  }
+  
+ 
+  /* =========================================================
+     EMAIL
+     ========================================================= */
+  .emailBox {
+    background:#0b1b2b;
+    color:#e6eef7;
+    padding:12px;
+    border-radius:12px;
+    margin:10px 0;
+    white-space:pre-wrap;
+    font-size:13px;
+  }
+  
+  .rowLine {
+    padding:8px 0;
+    border-bottom:1px dashed var(--border);
+  }
+  
+  /* =========================================================
+     MODAL
+     ========================================================= */
+  .modalOverlay {
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.45);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    z-index:1000;
+  }
+  
+  .modal {
+    background:#fff;
+    border-radius:8px;
+    padding:20px;
+    width:100%;
+    max-width:420px;
+    box-shadow:0 10px 30px rgba(0,0,0,.2);
+  }
+  
+  /* =========================================================
+     RESPONSIVE (MOBILE)
+     ========================================================= */
+  @media (max-width:900px) {
+    .grid2,
+    .grid3 { grid-template-columns:1fr; }
+  }
+  
+  @media (max-width:768px) {
+    .nav { padding:12px 16px; }
+    .navToggle { display:block; }
+    .navRight { display:none; }
+    .navLogo { height:36px; }
+  }
+  
+  @media (max-width:640px) {
+    .appMain { padding:12px; }
+    .panelHeader { font-size:16px; padding:12px 16px; }
+    .panelBody { padding:12px; }
+    .card { padding:14px; }
+    .btn { min-height:44px; font-size:15px; }
+    input,select { font-size:16px; min-height:44px; }
+  }
+  
+  @media (max-width:480px) {
+    .calCell { min-height:40px; padding:4px; }
+    .calPill { font-size:10px; padding:4px 6px; }
+  }
+  
+  @media (max-width:360px) {
+    .calPill { display:none; }
+  }
+  
+ 
+  /* =========================================================
+     ✅ MOBILE CLIPPING FIX (PANELS & CARDS)
+     ========================================================= */
+  @media (max-width:768px) {
+    .panel {
+      overflow:visible;
+    }
+  
+    .card,
+    .eventItem
+    .assignRow,
+    .staffRow {
+      max-width:100%;
+      box-sizing:border-box;
+    }
+  
+    .grid2,
+    .grid3 {
+      width:100%;
+    }
+  
+    .panelBody {
+      overflow-x:hidden;
+    }
+  }
+  
+  /* =========================================================
+     REDUCED MOTION / HIGH CONTRAST
+     ========================================================= */
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation:none !important;
+      transition:none !important;
+    }
+  }
+  
+  @media (prefers-contrast: more) {
+    .btnPrimary {
+      background:#000;
+      color:#fff;
+    }
+  }

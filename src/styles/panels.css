@@ -1,0 +1,69 @@
+/* =========================================================
+     PANELS
+     ========================================================= */
+.panel {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  margin-bottom: 16px;
+}
+
+.panelHeader {
+  padding: 16px 20px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 900;
+  color: #fff;
+}
+
+.panelHeader.teal {
+  background: var(--teal);
+}
+
+.panelHeader.pink {
+  background: var(--pink);
+}
+
+.panelHeader.yellow {
+  background: var(--yellow);
+  color: var(--text);
+}
+
+.panelHeader.blue {
+  background: var(--blue);
+}
+
+.panelSub {
+  font-size: 13px;
+  font-weight: 600;
+  opacity: .85;
+}
+
+.panelBody {
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+/* ===============================
+   Checkbox field (FINAL FIX)
+   =============================== */
+
+   .fieldCheckbox {
+    width: 20%;                 /* ⬅ match other fields */
+    display: flex;
+    justify-content: flex-start; /* ⬅ stop centering */
+  }
+  
+  .fieldCheckbox label {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    margin: 0;
+  }
+  
+  .fieldCheckbox input[type="checkbox"] {
+    margin: 0;
+  }
