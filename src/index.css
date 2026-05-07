@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+@theme {
+  --color-oyci-green:      #0b8e36;
+  --color-oyci-green-dark: #066633;
+  --color-oyci-purple:     #913a8e;
+  --color-oyci-blue:       #27b0e7;
+  --color-oyci-pink:       #e6007e;
+}
+
